@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="handleClick"
+            type="com.poseidonapp.utils.HandleClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_gradient_blue"
+        android:padding="@dimen/_5sdp">
+
+        <LinearLayout
+            android:id="@+id/toolbarLL"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/ivBackpress"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/tvToolbar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint=""
+                android:text="@string/chat"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/_15ssp" />
+
+            <ImageView
+                android:id="@+id/ivThreeDots"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="@dimen/_10sdp"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/adminLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/edittestLL"
+            android:layout_below="@+id/toolbarLL"
+            android:layout_marginHorizontal="@dimen/_2sdp"
+            android:background="@drawable/background_gradient_blue"
+            android:orientation="vertical">
+            <!--            setStackFromEnd=true-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChatMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/adminLL"
+            android:background="@color/light_gray" />
+
+        <LinearLayout
+            android:id="@+id/edittestLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/background_gradient_blue">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/etMessages"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_weight="1.8"
+                    android:background="@drawable/darkblue_rect"
+                    android:gravity="start|center"
+                    android:hint="Enter message"
+                    android:imeOptions="actionDone"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/White"
+                    android:textColorHint="@color/White" />
+
+                <ImageView
+                    android:id="@+id/btnSendImg"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_1dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:src="@drawable/send_1" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/addmaterialpopup"
+    android:layout_gravity="bottom"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:background="@drawable/bottom_sheet_drawable">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp">
+                    <TextView
+                        android:id="@+id/tvAddBuilding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal|center"
+                        android:text="System Allocation"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/Black"/>
+                    <ImageView
+                        android:id="@+id/ivaddCircle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20sdp"
+                        android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                        android:src="@drawable/ic_cross"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_system_id"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black" />
+
+                <TextView
+                    android:id="@+id/etSystemId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/enter_add_system_id"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" /><!--
+                <EditText
+                    android:id="@+id/etSystemId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/enter_add_system_id"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/system_name"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etSystemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/enter_system_name"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/system_location"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etSystemLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/enter_system_location"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+
+
+                <TextView
+                    android:id="@+id/tvAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/buttons_background"
+                    android:gravity="center_horizontal"
+                    android:paddingVertical="10dp"
+                    android:text="@string/submit"
+                    android:textAlignment="center"
+                    android:textColor="@color/White"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    />
+            </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

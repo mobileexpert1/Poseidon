@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/dashboard_selector"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/workOrderFragment"
+        android:icon="@drawable/home_selector"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/clockFragment"
+        android:icon="@drawable/clock_selector"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/orderrFragment"
+        android:icon="@drawable/document_selector"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/personFragment"
+        android:icon="@drawable/profile_selector"
+        tools:ignore="MenuTitle" />
+</menu>

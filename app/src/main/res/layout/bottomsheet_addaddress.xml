@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:id="@+id/rlTop"
+    android:layout_gravity="bottom"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:background="@drawable/bottom_sheet_drawable">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/tvAddAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="center_horizontal|center"
+                    android:text="Add Address"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/Black"/>
+
+                <ImageView
+                    android:id="@+id/ivaddImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:src="@drawable/ic_cross" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp">
+                <TextView
+                    android:id="@+id/tvAddressLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Address Line"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etAddressLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:hint="Enter Address Line"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/tvAddressLine"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/tvCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/city"
+                    android:layout_below="@+id/etAddressLine"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/enter_city"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:layout_below="@+id/tvCity"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+                <TextView
+                    android:id="@+id/tvState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/state"
+                    android:layout_below="@+id/etCity"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/enter_state"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/tvState"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/tvPostalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/postal_code"
+                    android:layout_below="@+id/etState"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etPostalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="Enter Postal Code"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/tvPostalCode"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+
+
+                <TextView
+                    android:id="@+id/tvSubmits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/buttons_background"
+                    android:gravity="center_horizontal"
+                    android:paddingVertical="10dp"
+                    android:text="@string/submit"
+                    android:layout_below="@+id/etPostalCode"
+                    android:textAlignment="center"
+                    android:textColor="@color/White"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    />
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<!-- res/drawable/date_background.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected state (blue background) -->
+    <item android:state_selected="true">
+        <shape>
+            <solid android:color="@color/blue" /> <!-- Blue background for selected date -->
+            <corners android:radius="8dp" /> <!-- Rounded corners -->
+        </shape>
+    </item>
+
+    <!-- Default state (unselected) -->
+    <item>
+        <shape>
+            <solid android:color="@android:color/white" /> <!-- White background for unselected date -->
+            <corners android:radius="8dp" />
+<!--            <stroke android:color="@android:color/darker_gray" android:width="1dp" /> &lt;!&ndash; Gray border &ndash;&gt;-->
+        </shape>
+    </item>
+</selector>

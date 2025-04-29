@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/addmaterialpopup"
+    android:layout_gravity="bottom"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_sheet_drawable">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/tvAddBuilding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/add_request"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/Black"/>
+                <ImageView
+                    android:id="@+id/ivCross"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:src="@drawable/ic_cross"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/bill_to"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textStyle="bold"
+                android:textColor="@color/Black" />
+            <EditText
+                android:id="@+id/etBillto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@drawable/custom_shape_input_text"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Enter Name"
+                android:imeOptions="actionDone"
+                android:layout_below="@+id/tvName"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@color/grey"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/inspection_types"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textStyle="bold"
+                android:textColor="@color/Black" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:textSize="@dimen/_11ssp"
+                android:layout_marginTop="2dp"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/light_gray"
+                android:layout_below="@+id/inspectorTypeTv"
+                android:background="@drawable/custom_shape_input_text"
+                android:padding="@dimen/_2sdp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/assign_date"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textStyle="bold"
+                android:textColor="@color/Black" />
+
+            <LinearLayout
+                android:id="@+id/llassignDateSelectedTv"
+                android:layout_width="match_parent"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/assignDateSelectedTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Assign Date"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:padding="@dimen/_10sdp"
+                    android:textColorHint="#8F8E8E"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Assign Time"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textStyle="bold"
+                android:textColor="@color/Black" />
+
+            <LinearLayout
+                android:id="@+id/llassignTimeSelectedTv"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/assignTimeTv"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/assignTimeSelectedTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Assign Time"
+                    android:padding="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:textColor="@color/light_gray"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Notes"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textStyle="bold"
+                android:textColor="@color/Black" />
+
+            <EditText
+                android:id="@+id/etNotes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/custom_shape_input_text"
+                android:hint="Enter Notes"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/grey"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:gravity="start|top"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true" />
+
+
+
+            <TextView
+                android:id="@+id/tvSubmitt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/buttons_background"
+                android:gravity="center_horizontal"
+                android:paddingVertical="10dp"
+                android:text="@string/submit"
+                android:textAlignment="center"
+                android:textColor="@color/White"
+                android:textSize="15sp"
+                android:fontFamily="@font/latosemibold"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

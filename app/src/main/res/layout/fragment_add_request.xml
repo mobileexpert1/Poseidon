@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/addmaterialpopup"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/add_local_recipient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/home_bg">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tvAddBuilding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal|center"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/add_request"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/latosemibold"
+                        android:textColor="@color/Black"/>
+
+                </RelativeLayout>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/name"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="Enter Name"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Email Address"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="Enter Email Address"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/phone"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etPhoneNumbet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/enter_phone_number"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/state"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/state"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/city"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/city"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/postal_code"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etPostalcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/postal_code"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/bill_to"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etBillto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="Enter Bill To"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/assign_date"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etAssignDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="@string/enter_assign_date"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/inspection_types"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etInspection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="Enter select inspection type"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/building_name"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/etBuildingName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@1234567890.#$%&amp;amp!;*"
+                    android:hint="Enter Building Name"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/grey"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="9dp"
+                    android:singleLine="true" />
+
+
+                <TextView
+                    android:id="@+id/tvSubmitt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/buttons_background"
+                    android:gravity="center_horizontal"
+                    android:paddingVertical="10dp"
+                    android:text="@string/submit"
+                    android:textAlignment="center"
+                    android:textColor="@color/White"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>

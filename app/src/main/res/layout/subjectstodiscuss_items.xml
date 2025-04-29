@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="handleClick"
+            type="com.poseidonapp.utils.HandleClickListener" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/checkforupdateLL"
+            style="@style/settingFragmentStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/noteTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.6"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:text="@string/test_on_board"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/_13sdp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="0.4"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:src="@drawable/ic_forward">
+
+            </ImageView>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

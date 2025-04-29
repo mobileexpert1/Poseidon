@@ -1,0 +1,51 @@
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Snackbar" />
+
+    <style name="Snackbar.Text.Action">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:background">@drawable/sb__btn_bg</item>
+    </style>
+
+    <style name="Snackbar.Text">
+        <item name="android:paddingBottom">@dimen/_15sdp</item>
+        <item name="android:paddingLeft">@dimen/_25sdp</item>
+        <item name="android:paddingTop">@dimen/_15sdp</item>
+        <item name="android:paddingRight">@dimen/_25sdp</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog"
+        tools:ignore="DuplicateDefinition">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item></style>
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal"
+        tools:ignore="DuplicateDefinition">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="settingFragmentStyle">
+        <item name="android:background">@drawable/settingfragment_desgin</item>
+        <item name="android:paddingHorizontal">@dimen/space_XS</item>
+        <item name="android:paddingVertical">@dimen/space_S</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+
+    <style name="CustomDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/dark_blue</item>
+        <item name="android:textColorPrimary">@color/Black</item>
+        <item name="android:textColorSecondary">@color/Black</item>
+        <item name="android:textColorTertiary">@color/Black</item>
+        <!-- Other attributes you want to customize -->
+    </style>
+
+
+
+
+
+</resources>

@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="handleClick"
+            type="com.poseidonapp.utils.HandleClickListener" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_Shape"
+            android:padding="@dimen/_15sdp"
+            tools:context=".ui.fragments.RequestDetailFragment">
+
+            <RelativeLayout
+                android:id="@+id/rlToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:src="@drawable/left_arrow" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="Detail"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameTv"
+                android:layout_below="@+id/rlToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <LinearLayout
+                android:id="@+id/llnameET"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/nameTv"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/nameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:hint="Enter name"
+                    android:imeOptions="actionDone"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/Black"
+                    android:textColorHint="#8F8E8E"
+                    android:textSize="@dimen/_13ssp" />
+
+            </LinearLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/emailTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llnameET"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Email Address"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <LinearLayout
+                android:id="@+id/llemailET"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/emailTv"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/emailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:hint="Enter email"
+                    android:imeOptions="actionDone"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/Black"
+                    android:textColorHint="#8F8E8E"
+                    android:textSize="@dimen/_13ssp" />
+
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llemailET"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Phone Number"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+
+            <LinearLayout
+                android:id="@+id/llphoneET"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/phoneTv"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/phoneET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:hint="Enter phone number"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/Black"
+                    android:textColorHint="#8F8E8E"
+                    android:textSize="@dimen/_13ssp" />
+
+
+            </LinearLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/stateTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llphoneET"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="State"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <LinearLayout
+                android:id="@+id/llstateET"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/stateTv"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/stateET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:hint="Enter state"
+                    android:imeOptions="actionDone"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/Black"
+                    android:textColorHint="#8F8E8E"
+                    android:textSize="@dimen/_13ssp" />
+
+            </LinearLayout>
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cityTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llstateET"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="City"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <LinearLayout
+                android:id="@+id/llcityET"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/cityTv"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/cityET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:hint="Enter city"
+                    android:imeOptions="actionDone"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/Black"
+                    android:textColorHint="#8F8E8E"
+                    android:textSize="@dimen/_13ssp" />
+
+            </LinearLayout>
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/postalCodeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llcityET"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Postal Code"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+
+            <LinearLayout
+                android:id="@+id/llpostalCodeET"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/postalCodeTv"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/postalCodeET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:hint="Enter postal code"
+                    android:imeOptions="actionDone"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/Black"
+                    android:textColorHint="#8F8E8E"
+                    android:textSize="@dimen/_13ssp" />
+
+            </LinearLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addressLineOneTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llpostalCodeET"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Address Line 1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+
+
+            <LinearLayout
+                android:id="@+id/lladdressLineOneET"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/addressLineOneTv"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/addressLineOneET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:hint="Enter address"
+                    android:imeOptions="actionDone"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/Black"
+                    android:textColorHint="#8F8E8E"
+                    android:textSize="@dimen/_13ssp" />
+
+            </LinearLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/billToTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lladdressLineOneET"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Bill To"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <LinearLayout
+                android:id="@+id/llbillToET"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/billToTv"
+                android:visibility="gone"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/billToET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:hint="Bill to"
+                    android:imeOptions="actionDone"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/Black"
+                    android:textColorHint="#8F8E8E"
+                    android:textSize="@dimen/_13ssp" />
+
+            </LinearLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/assignDateTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llbillToET"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Assign Date"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <LinearLayout
+                android:id="@+id/llassignDateSelectedTv"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/assignDateTv"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/assignDateSelectedTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Assign Date"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/assignTimeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llassignDateSelectedTv"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Assign Time"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+            <LinearLayout
+                android:id="@+id/llassignTimeSelectedTv"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/assignTimeTv"
+                android:background="@color/rect_shape_grey_two"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/assignTimeSelectedTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Assign Time"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/inspectorTypeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/llassignTimeSelectedTv"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Inspector Type"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:visibility="gone"
+                android:layout_below="@+id/inspectorTypeTv"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    android:hint="Select Inspector Type"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:id="@+id/nextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textInputLayout"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_weight="1.5"
+                android:background="@drawable/next_button_background"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center|center_vertical"
+                android:paddingHorizontal="@dimen/_25sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Next"
+                android:textColor="@color/White"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
+

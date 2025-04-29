@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handleClick"
+            type="com.poseidonapp.utils.HandleClickListener" />
+    </data>
+
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:fillViewport="true">-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgPlaylistItemBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:maxHeight="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/background_gradient_blue" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_15sdp">
+
+
+            <RelativeLayout
+                android:id="@+id/rlToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:src="@drawable/ic_back" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/header_titleTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:text="@string/clock_in_out"
+                    android:textColor="@color/dark_white"
+                    android:textSize="@dimen/_16ssp" />
+
+            </RelativeLayout>
+
+
+
+
+           <!-- <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:src="@drawable/ic_back" />-->
+
+            <RelativeLayout
+                android:id="@+id/rlTimer"
+                android:layout_below="@+id/rlToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/progressBarCircle"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="@dimen/_160sdp"
+                    android:layout_height="@dimen/_160sdp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/drawable_circle_dark_blue"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="2"
+                    android:progressDrawable="@drawable/drawable_circle_yellow"
+                    android:rotation="-90" />
+
+
+                <TextView
+                    android:id="@+id/tvPunchTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="00:00"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_32ssp" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:background="@drawable/rectshape_clockin_out_blue"
+                android:layout_below="@+id/rlTimer"
+                android:orientation="horizontal">
+
+                <!--      <SearchView
+                          android:id="@+id/searchView"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="8dp"
+                          android:searchIcon="@drawable/ic_search"
+                          android:queryHint="Search" />-->
+
+
+                <EditText
+                    android:id="@+id/edtSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:hint="@string/search"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:padding="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/search_hint_color"
+                    android:textSize="@dimen/_12sdp" />
+
+                <!-- <AutoCompleteTextView
+                     android:id="@+id/autoTextView"
+                     android:layout_width="0dp"
+                     android:layout_weight="2"
+                     android:layout_marginStart="@dimen/_5sdp"
+                     android:layout_height="match_parent"
+                     android:background="@null"
+                     android:gravity="center_vertical"
+                     android:hint="Search"
+                     android:textColorHint="@color/search_hint_color"
+                     android:inputType="text"
+                     android:textColor="@color/white"
+                     android:textSize="@dimen/_11ssp" />-->
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvStartShift"
+                android:layout_below="@+id/llSearch"
+                android:layout_width="match_parent"
+                android:clipToPadding="false"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                tools:itemCount="7"
+                tools:listitem="@layout/clock_in_out_item"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchItems"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/llSearch"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:background="@color/white"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/noDataFoundTV"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/llSearch"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="No Data Found !"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+
+
+    </FrameLayout>
+
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+
+
+</layout>

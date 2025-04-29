@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvDates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/_17_january_2024"
+                android:fontFamily="@font/latoregular"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/grey"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAppointment"
+                android:layout_below="@+id/tvDates"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_5sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:spanCount="2" /> <!-- Set spanCount as per the number of columns -->
+
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:layout_below="@+id/tvDates">-->
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/llAppointmentStart"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    tools:ignore="MissingConstraints"-->
+<!--                    android:layout_marginRight="@dimen/_160sdp"-->
+<!--                    android:background="@drawable/appointmentpurple"-->
+<!--                    android:padding="@dimen/_5sdp"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvAppointmentName"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:text="ABC appointment"-->
+<!--                        android:fontFamily="@font/latoregular"-->
+<!--                        android:textSize="@dimen/_13sdp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_marginTop="@dimen/_5sdp"-->
+<!--                        android:gravity="center" />-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvAppointmentTime"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="9:30 AM-10:30 AM"-->
+<!--                        android:fontFamily="@font/latoregular"-->
+<!--                        android:textSize="@dimen/_11sdp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_marginTop="@dimen/_5sdp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_marginBottom="@dimen/_5sdp"/>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/llAppointmentEnd"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    tools:ignore="MissingConstraints"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    android:layout_marginLeft="@dimen/_160sdp"-->
+<!--                    android:background="@drawable/appointmentorange"-->
+<!--                    android:padding="@dimen/_5sdp"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvTitle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:text="ABC appointment"-->
+<!--                        android:fontFamily="@font/latoregular"-->
+<!--                        android:textSize="@dimen/_13sdp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_marginTop="@dimen/_5sdp"-->
+<!--                        android:gravity="center" />-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvTime"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="9:30AM-10:30AM"-->
+<!--                        android:fontFamily="@font/latoregular"-->
+<!--                        android:textSize="@dimen/_11sdp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_marginTop="@dimen/_5sdp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_marginBottom="@dimen/_5sdp"/>-->
+<!--                </LinearLayout>-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

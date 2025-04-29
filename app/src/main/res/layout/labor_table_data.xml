@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/labortableData"
+            android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/linegrey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="161.5">
+
+                        <TextView
+                            android:id="@+id/hrsTV"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="2"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:layout_weight="30"
+                            android:paddingVertical="10dp"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/latosemibold"
+                            android:textColor="@color/black"/>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:background="@color/linegrey" />
+                        <TextView
+                            android:id="@+id/laborTV"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:text="DOUBLE"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:layout_weight="50"
+                            android:paddingVertical="10dp"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/latosemibold"
+                            android:textColor="@color/black"/>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:background="#807D7D" />
+
+                        <TextView
+                            android:id="@+id/rateTV"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="210"
+                            android:paddingVertical="10dp"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/latosemibold"
+                            android:textColor="@color/black"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:background="#807D7D" />
+
+                        <TextView
+                            android:id="@+id/amountlaborTV"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="50"
+                            android:paddingVertical="10dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text=""
+                            android:textSize="15sp"
+                            android:fontFamily="@font/latosemibold"
+                            android:textColor="@color/black"/>
+
+                </LinearLayout>
+
+        </LinearLayout>
+
+</layout>
+

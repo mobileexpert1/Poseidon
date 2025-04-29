@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="handleClick"
+            type="com.poseidonapp.utils.HandleClickListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/firstRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/rlToolbar"
+                        android:layout_width="match_parent"
+                        android:background="@color/dark_red"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingHorizontal="@dimen/_15sdp"
+                        android:layout_height="@dimen/_55sdp">
+
+                        <ImageView
+                            android:id="@+id/ivBack"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_height="match_parent"
+                            android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                            android:src="@drawable/ic_inspector_back" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlFirst"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/rlToolbar"
+                        android:background="#EDEDED"
+                        android:padding="@dimen/_5sdp"
+                        android:visibility="visible">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/inspectionRecylerView"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/noDataFoundTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_60sdp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:gravity="center"
+                            android:text="@string/no_completed_request_found"
+                            android:textColor="@color/Black"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+
+
+
+    </FrameLayout>
+
+
+</layout>
+
+

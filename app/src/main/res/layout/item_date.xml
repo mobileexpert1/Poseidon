@@ -1,0 +1,31 @@
+<!-- res/layout/item_date.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="8dp"
+    android:orientation="vertical">
+
+    <!-- Day Name (Mon, Tue, Wed, etc.) -->
+    <TextView
+        android:id="@+id/dayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Mon"
+        android:textColor="@color/Black"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Date Number -->
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="20"
+        android:textColor="@color/Black"
+        android:textSize="16sp"
+        android:background="@drawable/date_background" /> <!-- Use drawable for background -->
+</LinearLayout>

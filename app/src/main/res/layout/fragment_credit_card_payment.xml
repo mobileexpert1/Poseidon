@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handleClick"
+            type="com.poseidonapp.utils.HandleClickListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White"
+        tools:context=".workorder.activities.CreditCardPaymentFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_15sdp">
+
+
+            <RelativeLayout
+                android:id="@+id/rlToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:src="@drawable/ic_back_dark_blue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/header_titleTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:text="@string/credit_card_payment"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="@dimen/_16ssp" />
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/rlToolbar"
+                android:scrollbars="none">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="@string/authorize_24_7_fire_protection_to_change_my_credit_card"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/fullNameET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:hint="Enter full name"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:padding="9dp"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="@string/for_service_completed_or_on_after"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/dateoforderTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:hint="Enter date"
+                        android:imeOptions="actionDone"
+                        android:maxLines="1"
+                        android:padding="9dp"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="This payment is for"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+
+                    <EditText
+                        android:id="@+id/descriptionworkET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:gravity="start"
+                        android:hint="(Description of goods/services)"
+                        android:imeOptions="actionDone"
+                        android:minLines="4"
+                        android:nestedScrollingEnabled="true"
+                        android:overScrollMode="always"
+                        android:padding="10dp"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:gravity="center_horizontal|center"
+                        android:text="Billing Address"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="Address"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/addressET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:hint="Enter full address"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:padding="9dp"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="Phone Number"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/numberET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:hint="Number"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:padding="9dp"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="City,State,Zip"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/cityStateZipET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:hint="154890"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:padding="9dp"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="Email address"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/emailAddressET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:hint="test@yopmail.com"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:padding="9dp"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:gravity="center_horizontal|center"
+                        android:text="@string/credit_card_details"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sign_image_background"
+                        android:padding="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/latosemibold"
+                            android:gravity="center"
+                            android:text="@string/payment_method"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:src="@drawable/mastercard" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:src="@drawable/visa" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:src="@drawable/ic_american_express" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:src="@drawable/discover" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="Name on card"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/enterCardNameET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:hint="Enter name"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:padding="9dp"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="Card number"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/enterCardNumberET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:hint="0000 0000 0000 0000"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:padding="9dp"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="Card Expiration"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/cardMonthET"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/custom_shape_input_text"
+                            android:fontFamily="@font/latosemibold"
+                            android:hint="month"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="9dp"
+                            android:singleLine="true"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/cardYearET"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/custom_shape_input_text"
+                            android:fontFamily="@font/latosemibold"
+                            android:hint="year"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="9dp"
+                            android:singleLine="true"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/latosemibold"
+                        android:text="CVV"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/enterCVVET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/custom_shape_input_text"
+                        android:fontFamily="@font/latosemibold"
+                        android:hint="xxx"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:padding="9dp"
+                        android:singleLine="true"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/continueTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/butons_back"
+                        android:fontFamily="@font/latosemibold"
+                        android:gravity="center"
+                        android:padding="17dp"
+                        android:paddingLeft="9dp"
+                        android:text="Continue"
+                        android:textAlignment="center"
+                        android:textColor="@color/White"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>

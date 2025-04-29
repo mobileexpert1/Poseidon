@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.poseidonapp.ui.Fragment.DashboardFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_workOrderFragment2"
+            app:destination="@id/workOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workOrderFragment"
+        android:name="com.poseidonapp.ui.fragments.WorkOrderFragment"
+        android:label="WorkOrderFragment"
+        tools:layout="@layout/fragment_work_order">
+        <action
+            android:id="@+id/action_workOrderFragment_to_clockFragment"
+            app:destination="@id/clockFragment" />
+        <action
+            android:id="@+id/action_workOrderFragment_to_emergencyRequestFragment"
+            app:destination="@id/emergencyRequestFragment" />
+        <action
+            android:id="@+id/action_workOrderFragment_to_safetyMeetingsFragment"
+            app:destination="@id/safetyMeetingsFragment" />
+        <action
+            android:id="@+id/action_workOrderFragment_to_scheduledEventsFragment"
+            app:destination="@id/scheduledEventsFragment" />
+        <action
+            android:id="@+id/action_workOrderFragment_to_addProjectFragment"
+            app:destination="@id/addProjectFragment" />
+        <action
+            android:id="@+id/action_workOrderFragment_to_addOrganizationFragment"
+            app:destination="@id/addOrganizationFragment" />
+        <action
+            android:id="@+id/action_workOrderFragment_to_installationFragment"
+            app:destination="@id/installationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clockFragment"
+        android:name="com.poseidonapp.ui.fragments.ClockFragment"
+        android:label="ClockFragment"
+        tools:layout="@layout/fragment_clock" >
+        <action
+            android:id="@+id/action_clockFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.poseidonapp.ui.fragments.OrderFragment"
+        android:label="OrderFragment"
+        tools:layout="@layout/fragment_order">
+        <action
+            android:id="@+id/action_orderFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.poseidonapp.ui.fragments.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/emergencyRequestFragment"
+        android:name="com.poseidonapp.ui.fragments.EmergencyRequestFragment"
+        android:label="EmergencyRequestFragment"
+        tools:layout="@layout/fragment_emergency_request"/>
+    <fragment
+        android:id="@+id/safetyMeetingsFragment"
+        android:name="com.poseidonapp.ui.fragments.SafetyMeetingsFragment"
+        android:label="SafetyMeetingsFragment"
+        tools:layout="@layout/fragment_safety_meetings">
+        <action
+            android:id="@+id/action_safetyMeetingsFragment_to_twenty47Fragment"
+            app:destination="@id/twenty47Fragment" />
+        <action
+            android:id="@+id/action_safetyMeetingsFragment_to_workOrderFragment"
+            app:destination="@id/workOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduledEventsFragment"
+        android:name="com.poseidonapp.ui.fragments.ScheduledEventsFragment"
+        android:label="ScheduledEventsFragment"
+        tools:layout="@layout/fragment_scheduled_events">
+        <action
+            android:id="@+id/action_scheduledEventsFragment_to_webViewOfScheduleFragment"
+            app:destination="@id/webViewOfScheduleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProjectFragment"
+        android:name="com.poseidonapp.ui.fragments.AddProjectFragment"
+        android:label="AddProjectFragment"
+        tools:layout="@layout/fragment_add_project"/>
+    <fragment
+        android:id="@+id/addOrganizationFragment"
+        android:name="com.poseidonapp.ui.fragments.AddOrganizationFragment"
+        android:label="AddOrganizationFragment"
+        tools:layout="@layout/fragment_add_organization" >
+        <action
+            android:id="@+id/action_addOrganizationFragment_to_addressesFragment"
+            app:destination="@id/addressesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/installationFragment"
+        android:name="com.poseidonapp.ui.fragments.InstallationFragment"
+        android:label="InstallationFragment"
+        tools:layout="@layout/fragment_installation"/>
+    <fragment
+        android:id="@+id/addressesFragment"
+        android:name="com.poseidonapp.ui.fragments.AddressesFragment"
+        android:label="AddressesFragment"
+        tools:layout="@layout/fragment_addresses" >
+        <action
+            android:id="@+id/action_addressesFragment_to_buildingFragment"
+            app:destination="@id/buildingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timeSheetFragment"
+        android:name="com.poseidonapp.ui.fragments.TimeSheetFragment"
+        android:label="TimeSheetFragment"
+        tools:layout="@layout/fragment_time_sheet"/>
+    <fragment
+        android:id="@+id/formQuestionsFragment"
+        android:name="com.poseidonapp.inspector.formquestions.FormQuestionsFragment"
+        android:label="FormQuestionsFragment"
+        tools:layout="@layout/fragment_form_questions"/>
+    <fragment
+        android:id="@+id/buildingFragment"
+        android:name="com.poseidonapp.ui.fragments.BuildingFragment"
+        android:label="BuildingFragment"
+        tools:layout="@layout/fragment_building"/>
+    <fragment
+        android:id="@+id/inspectorNotificationFragment"
+        android:name="com.poseidonapp.inspector.notification.InspectorNotificationFragment"
+        android:label="InspectorNotificationFragment"
+        tools:layout="@layout/fragment_inspector_notification"/>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.poseidonapp.ui.activities.LoginActivity"
+        android:label="LoginActivity"
+        tools:layout="@layout/activity_login"/>
+    <fragment
+        android:id="@+id/completedRequestsFragment"
+        android:name="com.poseidonapp.inspector.completedrequest.CompletedRequestsFragment"
+        android:label="CompletedRequestsFragment"
+        tools:layout="@layout/fragment_completed_requests"/>
+    <fragment
+        android:id="@+id/subjectToDiscussFragment"
+        android:name="com.poseidonapp.ui.fragments.SubjectToDiscussFragment"
+        android:label="SubjectToDiscussFragment"
+        tools:layout="@layout/fragment_subject_to_discuss"/>
+    <fragment
+        android:id="@+id/scheduledFragment"
+        android:name="com.poseidonapp.ui.fragments.ScheduledFragment"
+        android:label="ScheduledFragment"
+        tools:layout="@layout/fragment_scheduled"/>
+    <fragment
+        android:id="@+id/addRequestFragment"
+        android:name="com.poseidonapp.ui.fragments.AddRequestFragment"
+        android:label="AddRequestFragment"
+        tools:layout="@layout/add_request"/>
+    <fragment
+        android:id="@+id/systemManagmentFragment"
+        android:name="com.poseidonapp.ui.fragments.SystemManagmentFragment"
+        android:label="fragment_system_managment"
+        tools:layout="@layout/fragment_system_managment" />
+    <fragment
+        android:id="@+id/inspectionFormFragment"
+        android:name="com.poseidonapp.inspector.form.InspectionFormFragment"
+        android:label="InspectionFormFragment"
+        tools:layout="@layout/fragment_inspection_form"/>
+    <fragment
+        android:id="@+id/detailFillFragment"
+        android:name="com.poseidonapp.inspector.detail.DetailFillFragment"
+        android:label="DetailFillFragment"
+        tools:layout="@layout/fragment_detail_fill"/>
+    <fragment
+        android:id="@+id/clockInOutFragment"
+        android:name="com.poseidonapp.ui.fragments.ClockInOutFragment"
+        android:label="ClockInOutFragment"
+        tools:layout="@layout/fragment_clock_in_out"/>
+
+    <fragment
+        android:id="@+id/signatureFragment"
+        android:name="com.poseidonapp.inspector.signature.SignatureFragment"
+        android:label="SignatureFragment" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.poseidonapp.inspector.report.ReportFragment"
+        android:label="ReportFragment"
+        tools:layout="@layout/fragment_report"/>
+    <fragment
+        android:id="@+id/webViewOfScheduleFragment"
+        android:name="com.poseidonapp.ui.fragments.WebViewOfScheduleFragment"
+        android:label="WebViewOfScheduleFragment"
+        tools:layout="@layout/fragment_web_view_of_schedule"/>
+    <fragment
+        android:id="@+id/twenty47Fragment"
+        android:name="com.poseidonapp.ui.fragments.Twenty47Fragment"
+        android:label="Twenty47Fragment"
+        tools:layout="@layout/fragment_twenty47">
+        <action
+            android:id="@+id/action_twenty47Fragment_to_safetyMeetingsFragment"
+            app:destination="@id/safetyMeetingsFragment" />
+    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/workInputFragment"-->
+<!--        android:name="com.poseidonapp.workorder.activities.WorkInputFragment"-->
+<!--        android:label="WorkInputFragment" />-->
+
+</navigation>

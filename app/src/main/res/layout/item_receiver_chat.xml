@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp"
+    android:layout_marginBottom="6dp"
+    android:paddingBottom="10dp"
+    android:layout_marginTop="4dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rltop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_marginEnd="40dp"
+            android:id="@+id/relMessage"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/receiver_view"
+            android:layout_width="wrap_content"
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:layout_height="@dimen/_33sdp">
+            <TextView
+                android:id="@+id/receiverTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sure lorem is simply text "
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/_12ssp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relMessage"
+            android:layout_marginTop="4dp"
+            android:text=" 09:03 "
+            android:textSize="9dp"
+            android:textColor="@color/white"
+            android:layout_alignEnd="@+id/relMessage"
+            android:layout_marginEnd="4dp" />
+
+    </RelativeLayout>
+</LinearLayout>

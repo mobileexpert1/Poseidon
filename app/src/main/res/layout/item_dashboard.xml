@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_marginVertical="@dimen/_5sdp"
+
+    android:layout_marginRight="@dimen/_15sdp"
+
+    android:layout_height="wrap_content">
+<!--    app:cardCornerRadius="@dimen/_15sdp"-->
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/llAppointmentStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#eeeaf5"
+        app:cardElevation="0dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/latobold"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="ABC appointment"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_9sdp" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitle"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/latoregular"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="ABC appointment"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_8sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_below="@+id/tvDescription"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvAppointmentTime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/latoregular"
+                    android:gravity="left"
+                    android:text="9:30 PM"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/tvInspectionType"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/latoregular"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="2nd Quarterly"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/_8sdp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

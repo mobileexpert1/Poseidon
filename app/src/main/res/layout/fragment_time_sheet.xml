@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="handleClick"
+            type="com.poseidonapp.utils.HandleClickListener" />
+    </data>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15sdp">
+
+
+                <RelativeLayout
+                    android:id="@+id/rlToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                        android:src="@drawable/ic_back" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/header_titleTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:text="@string/timesheet"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/_16ssp" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/llDaysSheet"
+                    android:layout_below="@+id/rlToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/timesheet_white_rect"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_1sdp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:overScrollMode="never" />
+
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/rvDaysSheet"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        tools:itemCount="2"-->
+<!--                        tools:listitem="@layout/timesheet_listitem"/>-->
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llDaysSheet"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="vertical">
+
+                    <!-- For Monday-->
+                    <LinearLayout
+                        android:id="@+id/llMonSheet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/job_name"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/_12sdp" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            android:elevation="0dp"
+                            app:cardBackgroundColor="@color/White"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtEnterjobnameMon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:hint="@string/enter_job_name1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <LinearLayout
+                            android:id="@+id/llTimes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_in"
+                                    android:textColor="@color/Black"
+                                    android:textSize="@dimen/_12sdp"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:elevation="0dp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardBackgroundColor="@color/White"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+<!--                                    <androidx.appcompat.widget.AppCompatEditText-->
+                                    <TextView
+                                        android:id="@+id/edtTimeInMon"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_in"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:padding="@dimen/_5sdp"
+                                        android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                                        android:singleLine="true"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/_11sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_out"
+                                    android:textColor="@color/Black"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:elevation="0dp"
+                                    app:cardBackgroundColor="@color/White"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+<!--                                    <androidx.appcompat.widget.AppCompatEditText-->
+                                    <TextView
+                                        android:id="@+id/edtTimeOutMon"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_out"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="@string/hours"
+                                android:textColor="@color/Black"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_35sdp"
+                                android:elevation="0dp"
+                                android:layout_marginVertical="@dimen/_5sdp"
+                                app:cardBackgroundColor="@color/White"
+                                app:cardCornerRadius="@dimen/_4sdp">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/edtHoursMon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/custom_shape_input_text"
+                                    android:hint="@string/hours"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="number"
+                                    android:padding="@dimen/_5sdp"
+                                    android:singleLine="true"
+                                    android:textColor="@color/Black"
+                                    android:textColorHint="@color/texthintcolor"
+                                    android:textSize="@dimen/_13ssp" />
+
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/description_of_work1"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:elevation="0dp"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            app:cardBackgroundColor="@color/White"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtDescriptionofWorkMon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:gravity="start"
+                                android:hint="@string/description_of_work1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences|textMultiLine"
+                                android:minLines="5"
+                                android:padding="@dimen/_5sdp"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+<!--
+
+                    &lt;!&ndash; For Tuesday&ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/llTueSheet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/job_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtEnterjobnameTue"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:hint="@string/enter_job_name1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <LinearLayout
+                            android:id="@+id/llTimesTue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_in"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtTimeInTue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_in"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/_11sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_out"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtTimeOutTue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_out"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/hours"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtHoursTue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/hours"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="number"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/description_of_work1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtDescriptionofWorkTue"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:gravity="start"
+                                android:hint="@string/description_of_work1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences|textMultiLine"
+                                android:minLines="5"
+                                android:padding="@dimen/_5sdp"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+                    &lt;!&ndash; For Wednesday&ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/llWedSheet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/job_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtEnterjobnameWed"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:hint="@string/enter_job_name1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <LinearLayout
+                            android:id="@+id/llTimesWed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_in"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtTimeInWed"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_in"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/_11sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_out"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtTimeOutWed"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_out"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/hours"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtHoursWed"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/hours"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="number"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/description_of_work1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtDescriptionofWorkWed"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:gravity="start"
+                                android:hint="@string/description_of_work1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences|textMultiLine"
+                                android:minLines="5"
+                                android:padding="@dimen/_5sdp"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+                    &lt;!&ndash; For Thursday&ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/llThuSheet"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/job_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtEnterjobnameThu"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:hint="@string/enter_job_name1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <LinearLayout
+                            android:id="@+id/llTimesThu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_in"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtTimeInThu"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_in"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/_11sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_out"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtTimeOutThu"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_out"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/hours"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtHoursThu"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/hours"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="number"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/description_of_work1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtDescriptionofWorkThu"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:gravity="start"
+                                android:hint="@string/description_of_work1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences|textMultiLine"
+                                android:minLines="5"
+                                android:padding="@dimen/_5sdp"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+                    &lt;!&ndash; For Friday&ndash;&gt;
+                    <LinearLayout
+                        android:id="@+id/llFriSheet"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/job_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtEnterjobnameFri"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:hint="@string/enter_job_name1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <LinearLayout
+                            android:id="@+id/llTimesFri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_in"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtTimeInFri"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_in"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/_11sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/time_out"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtTimeOutFri"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/time_out"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="time"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/hours"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_13ssp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_35sdp"
+                                    android:layout_marginVertical="@dimen/_5sdp"
+                                    app:cardCornerRadius="@dimen/_4sdp">
+
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/edtHoursFri"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/custom_shape_input_text"
+                                        android:hint="@string/hours"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="number"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/Black"
+                                        android:textColorHint="@color/texthintcolor"
+                                        android:textSize="@dimen/_13ssp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/description_of_work1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edtDescriptionofWorkFri"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/custom_shape_input_text"
+                                android:gravity="start"
+                                android:hint="@string/description_of_work1"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences|textMultiLine"
+                                android:minLines="5"
+                                android:padding="@dimen/_5sdp"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/texthintcolor"
+                                android:textSize="@dimen/_13ssp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+-->
+
+
+                    <TextView
+                        android:id="@+id/tvSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_weight="1.5"
+                        android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                        android:background="@color/dark_blue"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center|center_vertical"
+                        android:paddingHorizontal="@dimen/_25sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:text="@string/submit"
+                        android:textColor="@color/White"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </FrameLayout>
+
+</layout>

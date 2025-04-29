@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="handleClick"
+            type="com.poseidonapp.utils.HandleClickListener" />
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_blue_text"
+            tools:context=".ui.Fragment.DashBoardFragment">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                tools:ignore="MissingConstraints">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileimage"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:src="@drawable/profileimage" />
+                <TextView
+                    android:id="@+id/tvwelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome back"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_toRightOf="@+id/profileimage"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/_10sdp"/>
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Johnon"
+                    android:layout_below="@+id/tvwelcome"
+                    android:layout_toRightOf="@+id/profileimage"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:id="@+id/iv_poweroff"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/poweroff"
+                    android:layout_marginTop="@dimen/_33sdp"
+                    android:layout_alignParentRight="true"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:layout_marginRight="@dimen/_28sdp"/>
+
+                <ImageView
+                    android:id="@+id/iv_notification"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/notifications"
+                    android:layout_marginTop="@dimen/_33sdp"
+                    android:layout_alignParentRight="true"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    />
+            </RelativeLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/_90sdp">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_600sdp"
+                    android:background="@drawable/home_bg"
+                    android:orientation="vertical"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="119dp">
+                    <RelativeLayout
+                        android:id="@+id/rlProgress"
+                        android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ProgressBar
+                                android:id="@+id/progressBarCircle"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/drawable_circle_dark_blue"
+                                android:indeterminate="false"
+                                android:layout_gravity="center"
+                                android:max="100"
+                                android:progress="1"
+                                android:progressDrawable="@drawable/drawable_circle_white"
+                                android:rotation="-90" />
+
+                            <ImageView
+                                android:id="@+id/circleImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/circle" />
+                            <TextView
+                                android:id="@+id/tvPunchTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="00:00"
+                                android:textColor="@color/dark_blue"
+                                android:textSize="@dimen/_25ssp"
+                                android:fontFamily="sans-serif-medium" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Start"
+                                android:textSize="@dimen/_14sdp"
+                                android:textColor="@color/dark_blue"
+                                android:layout_marginTop="@dimen/_30sdp"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/latobold" />
+
+                        </FrameLayout>
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/tvClockin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rlProgress"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Clock In "
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/dark_blue_text"/>
+
+                  <RelativeLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="@dimen/_15sdp"
+                      android:padding="@dimen/_8sdp"
+                      android:background="@drawable/rectshape_clockin_out_blue"
+                      android:layout_marginHorizontal="@dimen/_15sdp"
+                      android:layout_below="@+id/tvClockin">
+                      <TextView
+                          android:id="@+id/tvNoofproject"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/number_of_project"
+                          android:layout_marginTop="@dimen/_10sdp"
+                          android:fontFamily="@font/poppins_regular"
+                          android:textSize="@dimen/_12sdp"
+                          android:textColor="@color/Black" />
+                      <TextView
+                          android:id="@+id/tvProjects"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/_10sdp"
+                          android:fontFamily="@font/latobold"
+                          android:text="11223"
+                          android:textSize="@dimen/_12sdp"
+                          android:textColor="@color/Black"
+                          android:layout_alignParentRight="true"/>
+
+                  </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

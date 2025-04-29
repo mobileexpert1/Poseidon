@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp"
+    android:layout_marginBottom="6dp"
+    android:paddingBottom="10dp"
+    android:layout_marginTop="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/relMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/sender_view"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sure lorem is simply text "
+                android:textColor="@color/White"
+                android:textSize="@dimen/_12ssp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:text="3:30pm"
+            android:textSize="9dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relMessage"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/dark_blue"
+            android:layout_alignEnd="@+id/relMessage"
+            android:layout_marginEnd="5dp"
+            />
+    </RelativeLayout>
+</LinearLayout>

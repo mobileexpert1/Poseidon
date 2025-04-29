@@ -1,0 +1,276 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/_10sdp"
+    android:elevation="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/llSelectedTimeDates"
+                    android:layout_width="match_parent"
+                    android:visibility="visible"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/tvSCalendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/vacations_"
+                        android:textColor="@color/dark_blue_text"
+                        android:textSize="@dimen/_16sdp" />
+
+
+
+                    <LinearLayout
+                        android:id="@+id/llCalendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/bg_light_gray"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView"
+                        tools:context=".view.Example8Fragment">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_6sdp"
+                            android:weightSum="10">
+
+                            <ImageView
+                                android:id="@+id/ivCalendarBack"
+                                android:layout_width="41dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                                android:src="@drawable/ic_back_black" />
+
+                            <TextView
+                                android:id="@+id/tvMonthYear"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:gravity="center_horizontal"
+                                android:paddingHorizontal="@dimen/_6sdp"
+                                android:textColor="@color/Black"
+                                android:textSize="@dimen/_14ssp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppins_regular"
+                                tools:text="May 2023" />
+
+                            <ImageView
+                                android:id="@+id/ivCalendarForward"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                                android:src="@drawable/ic_forward_black" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@drawable/rect_shape_white_grey"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <include
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                layout="@layout/calendar_day_titles_container"
+                                android:layout_marginVertical="@dimen/_10sdp"/>
+
+                            <com.kizitonwose.calendar.view.CalendarView
+                                android:id="@+id/calendarView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:cv_daySize="rectangle"
+                                app:cv_dayViewResource="@layout/calendar_day_text"
+                                app:cv_outDateStyle="endOfGrid"
+                                app:cv_scrollPaged="true" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/viewline_grey" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llVacationPopup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:gravity="center_horizontal"
+                                android:padding="@dimen/_8sdp"
+                                android:text="@string/vacations"
+                                android:textColor="@color/Black"
+                                android:textSize="@dimen/_16sdp" />
+
+                            <com.skydoves.powerspinner.PowerSpinnerView
+                                android:id="@+id/psLeaveType"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="@drawable/rect_shape_white_grey"
+                                android:gravity="left|center_vertical"
+                                android:hint="@string/leave_type"
+                                android:padding="@dimen/_10sdp"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/Black"
+                                android:textSize="@dimen/_11ssp"
+                                app:spinner_arrow_gravity="end"
+                                app:spinner_arrow_tint="@color/Black"
+                                app:spinner_divider_show="true"
+                                app:spinner_divider_size="0.4dp"
+                                app:spinner_popup_animation="dropdown"
+                                app:spinner_popup_background="@color/White"
+                                app:spinner_popup_elevation="@dimen/_14sdp" />
+
+
+                            <EditText
+                                android:id="@+id/edtLeaveReason"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginBottom="@dimen/_20sdp"
+                                android:layout_weight="5"
+                                android:background="@drawable/rect_shape_white_grey"
+                                android:gravity="left"
+                                android:hint="@string/reason_for_leaves"
+                                android:imeOptions="actionDone"
+                                android:inputType="textCapSentences|textMultiLine"
+                                android:minLines="8"
+                                android:padding="@dimen/_10sdp"
+                                android:paddingBottom="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/Black"
+                                android:textColorHint="@color/Black"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:background="@color/viewline_grey" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvVacCancel"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:gravity="center"
+                                    android:paddingVertical="@dimen/_10sdp"
+                                    android:text="@string/cancel"
+                                    android:textColor="@color/cancel_red"
+                                    android:textSize="@dimen/_13sdp" />
+
+                                <View
+                                    android:layout_width="@dimen/_1sdp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/viewline_grey" />
+
+                                <TextView
+                                    android:id="@+id/tvVacSubmit"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:gravity="center"
+                                    android:paddingVertical="@dimen/_10sdp"
+                                    android:text="@string/submit"
+                                    android:textColor="@color/submit_text_blue"
+                                    android:textSize="@dimen/_13sdp">
+
+                                </TextView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </ScrollView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+

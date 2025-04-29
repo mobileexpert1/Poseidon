@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addsignaturepopup"
+    android:paddingHorizontal="20dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/add_local_recipient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/round_edges"
+        android:layout_gravity="center"
+        android:layout_margin="10dp">
+        <!--   android:windowCloseOnTouchOutside="true"
+           android:windowContentOverlay="@null"-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/SIGNATURE"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/latosemibold"
+                    android:textColor="@color/black"/>
+
+                <View
+                    android:layout_width="65dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="150dp"
+                    android:background="@color/line_blue" />
+
+                <com.github.gcacace.signaturepad.views.SignaturePad
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/signature_pad"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:penColor="@android:color/black"
+                    android:layout_marginTop="40dp"
+                    android:background="#f2f2f2"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="20dp"
+                    >
+                    <TextView
+                        android:id="@+id/clearTV"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/buttons_background"
+                        android:gravity="center_horizontal"
+                        android:paddingVertical="10dp"
+                        android:text="@string/clear"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/latosemibold"
+                        android:layout_weight="1"
+                        android:layout_marginRight="20dp"
+                        />
+                    <TextView
+                        android:id="@+id/addimageTV"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/buttons_background"
+                        android:gravity="center_horizontal"
+                        android:paddingVertical="10dp"
+                        android:text="@string/add"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/latosemibold"
+                        android:layout_weight="1"
+                        android:layout_marginStart="20dp"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/addmaterialpopup"
+    android:layout_gravity="bottom"
+    android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:background="@drawable/bottom_sheet_drawable">
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please select any option"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="8dp" />
+
+            <RelativeLayout
+                android:id="@+id/rlName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp">
+                <TextView
+                    android:id="@+id/tvAddRequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="@dimen/_8sdp"
+                    android:text="@string/add_request"
+                    android:gravity="center"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:textColor="@color/blue_background"
+                    android:textSize="@dimen/_12sdp" />
+                <TextView
+                    android:id="@+id/tvSystemManagement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_below="@+id/tvAddRequest"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/system_management"
+                    android:padding="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:textColor="@color/blue_background"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tvcancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_below="@+id/tvSystemManagement"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="@string/dismiss"
+                    android:background="@drawable/custom_shape_input_text"
+                    android:textColor="@color/blue_background"
+                    android:textSize="@dimen/_14sdp" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+</RelativeLayout>
